@@ -1,7 +1,7 @@
 import 'package:drb_task/core/colorhelper.dart';
 import 'package:drb_task/core/extentions/extensions.dart';
+import 'package:drb_task/core/widgets/custom_details_row.dart';
 import 'package:drb_task/features/Vehicles/data/models/vehicle_model.dart';
-import 'package:drb_task/features/Vehicles/presentation/widgets/vehicle_details_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -29,22 +29,22 @@ class VehicleDetailsBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // vehicle data
-                VehicleDetailsRow(
+                CustomDetailsRow(
                   title: 'Vehicle Name: ',
                   subTitle: vehicleModel.vehicleName,
                 ),
                 const Gap(8),
-                VehicleDetailsRow(
+                CustomDetailsRow(
                   title: 'Vehicle ID: ',
                   subTitle: vehicleModel.vehicleId.toString(),
                 ),
                 const Gap(8),
-                VehicleDetailsRow(
+                CustomDetailsRow(
                   title: 'Vehicle Status: ',
                   subTitle: vehicleModel.vehicleStatus.name,
                 ),
                 const Gap(8),
-                VehicleDetailsRow(
+                CustomDetailsRow(
                   title: 'Vehicle Type: ',
                   subTitle: vehicleModel.vehicleType.name,
                 ),
@@ -60,11 +60,11 @@ class VehicleDetailsBody extends StatelessWidget {
                         ),
                       ),
                       Gap(8),
-                      VehicleDetailsRow(
+                      CustomDetailsRow(
                         title: 'Assigned Driver: ',
                         subTitle: vehicleModel.assignedDriver ?? 'Not Assigned',
                       ),
-                      VehicleDetailsRow(
+                      CustomDetailsRow(
                         title: 'Current Trip: ',
                         subTitle: vehicleModel.currentTrip ?? 'No Trip',
                       ),

@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:drb_task/core/colorhelper.dart';
-import 'package:drb_task/core/extentions/extensions.dart';
+import 'package:drb_task/core/widgets/custom_details_row.dart';
 import 'package:drb_task/features/Drivers/data/models/driver_model.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -37,30 +36,30 @@ class DriverDetailsBody extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   children: [
-                    DriverDetailsRow(
+                    CustomDetailsRow(
                       title: 'Driver Name: ',
                       subTitle: driverModel.driverName,
                     ),
                     Gap(8),
-                    DriverDetailsRow(
+                    CustomDetailsRow(
                       title: 'Licence Number: ',
                       subTitle: driverModel.licenceNumber.toString(),
                     ),
                     Gap(8),
-                    DriverDetailsRow(
+                    CustomDetailsRow(
                       title: 'Driver State: ',
                       subTitle: driverModel.driverState.name,
                     ),
                     ...(driverModel.assignedVehicle != null
                         ? [
                           Gap(8),
-                          DriverDetailsRow(
+                          CustomDetailsRow(
                             title: 'Assigned Vehicle: ',
                             subTitle:
                                 driverModel.assignedVehicle ?? 'No Vehicle',
                           ),
                           Gap(8),
-                          DriverDetailsRow(
+                          CustomDetailsRow(
                             title: 'Current Trip: ',
                             subTitle: driverModel.curruntTrip ?? 'No Trip',
                           ),
@@ -70,37 +69,6 @@ class DriverDetailsBody extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class DriverDetailsRow extends StatelessWidget {
-  const DriverDetailsRow({
-    super.key,
-    required this.title,
-    required this.subTitle,
-  });
-
-  final String title, subTitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          title,
-          style: context.theme.textTheme.bodyLarge!.copyWith(
-            color: ColorHelper.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          subTitle,
-          style: context.theme.textTheme.bodyMedium!.copyWith(
-            color: ColorHelper.primary,
           ),
         ),
       ],

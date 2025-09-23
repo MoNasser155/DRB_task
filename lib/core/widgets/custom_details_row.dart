@@ -2,8 +2,8 @@ import 'package:drb_task/core/colorhelper.dart';
 import 'package:drb_task/core/extentions/extensions.dart';
 import 'package:flutter/material.dart';
 
-class VehicleDetailsRow extends StatelessWidget {
-  const VehicleDetailsRow({
+class CustomDetailsRow extends StatelessWidget {
+  const CustomDetailsRow({
     super.key,
     required this.title,
     required this.subTitle,
