@@ -2,6 +2,7 @@ import 'package:drb_task/core/enums/vehicles/vehicles_status_enum.dart';
 import 'package:drb_task/core/enums/vehicles/vehicles_type_enum.dart';
 import 'package:drb_task/core/shared/state_status.dart';
 import 'package:drb_task/features/Vehicles/data/models/vehicle_model.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'vehicles_state.dart';
@@ -18,8 +19,6 @@ class VehiclesCubit extends Cubit<VehiclesState> {
 
   Future<void> fetchVehicles() async {
     emit(state.copyWith(status: StateStatus.loading));
-    await Future.delayed(const Duration(seconds: 2));
-
     // mockData
     final List<VehicleModel> updatesVehiclesList = [
       VehicleModel(

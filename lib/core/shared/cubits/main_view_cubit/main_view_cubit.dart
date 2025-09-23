@@ -1,6 +1,7 @@
 import 'package:drb_task/core/appassets/icons.dart';
 import 'package:drb_task/core/shared/cubits/main_view_cubit/tap_config.dart';
 import 'package:drb_task/core/shared/state_status.dart';
+import 'package:drb_task/features/Drivers/presentation/pages/drivers_screen.dart';
 import 'package:drb_task/features/Vehicles/presentation/pages/vehicles_screen.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class MainViewCubit extends Cubit<MainViewState> {
 
   final List<Widget> screens = [
     VehiclesScreen(),
-    // ChatsScreen(),
+    DriversScreen(),
     // UserPostsScreen(),
     // AccountScreen(),
   ];
@@ -23,7 +24,7 @@ class MainViewCubit extends Cubit<MainViewState> {
   // Tab configuration
   final List<TabConfig> tabs = [
     TabConfig(icon: AppIcons.van, label: 'Vehicles'),
-    // TabConfig(icon: 'AppIcons.chats', label: 'Drivers'),
+    TabConfig(icon: AppIcons.driver, label: 'Drivers'),
     // TabConfig(icon: 'AppIcons.orders', label: 'Trips'),
   ];
 

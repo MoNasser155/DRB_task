@@ -1,10 +1,10 @@
 part of 'vehicles_cubit.dart';
 
-class VehiclesState {
+class VehiclesState extends Equatable {
   final StateStatus status;
   final List<VehicleModel> vehiclesList;
 
-  VehiclesState({required this.status, required this.vehiclesList});
+  const VehiclesState({required this.status, required this.vehiclesList});
 
   VehiclesState copyWith({
     StateStatus? status,
@@ -18,4 +18,7 @@ class VehiclesState {
 
   factory VehiclesState.initial() =>
       VehiclesState(status: StateStatus.initial, vehiclesList: []);
+
+  @override
+  List<Object> get props => [status, vehiclesList];
 }

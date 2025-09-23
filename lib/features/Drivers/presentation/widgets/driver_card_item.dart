@@ -1,52 +1,49 @@
-import 'package:drb_task/core/colorhelper.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:drb_task/core/extentions/extensions.dart';
 import 'package:drb_task/core/utiles/navigator_helper.dart';
-import 'package:drb_task/features/Vehicles/data/models/vehicle_model.dart';
-import 'package:drb_task/features/Vehicles/presentation/pages/vehicles_details_screen.dart';
+import 'package:drb_task/features/Drivers/data/models/driver_model.dart';
+import 'package:drb_task/features/Drivers/presentation/pages/driver_details_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
-class VehiclesCardItem extends StatelessWidget {
-  const VehiclesCardItem({super.key, required this.vehicleModel});
-  final VehicleModel vehicleModel;
+class DriverCardItem extends StatelessWidget {
+  const DriverCardItem({super.key, required this.driverModel});
+
+  final DriverModel driverModel;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         AppNavigator.push(
           transitionBuilder: AppNavigator.cupertinoTransition,
-          screen: VehicleDetailsScreen(vehicleModel: vehicleModel),
+          screen: DriverDetailsScreen(driverModel: driverModel,),
         );
       },
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: const [
-            BoxShadow(
-              color: ColorHelper.grey350,
-              blurRadius: 4,
-              spreadRadius: 1,
-            ),
-          ],
         ),
+
         child: Row(
           children: [
             Expanded(
               flex: 2,
-              child: SvgPicture.asset(
-                vehicleModel.vehicleImage,
-                height: 60,
-                width: 60,
-                colorFilter: const ColorFilter.mode(
-                  ColorHelper.mediumPrimary,
-                  BlendMode.srcIn,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: CachedNetworkImage(
+                  imageUrl: driverModel.driverImage,
+                  width: 60,
+                  height: 60,
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
-            Gap(8),
+            Gap(12),
             Expanded(
               flex: 8,
               child: Column(
@@ -56,22 +53,14 @@ class VehiclesCardItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Vehicle Name: ',
+                        'Driver Name: ',
                         style: context.theme.textTheme.bodyMedium!.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        vehicleModel.vehicleName,
+                        driverModel.driverName,
                         style: context.theme.textTheme.bodySmall,
-                      ),
-                      Gap(4),
-                      Text(
-                        '#${vehicleModel.vehicleId}',
-                        style: context.theme.textTheme.bodySmall!.copyWith(
-                          color: ColorHelper.primary,
-                          fontWeight: FontWeight.w600,
-                        ),
                       ),
                     ],
                   ),
@@ -79,13 +68,13 @@ class VehiclesCardItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Type: ',
+                        'Licence No: ',
                         style: context.theme.textTheme.bodyMedium!.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        vehicleModel.vehicleType.name,
+                        driverModel.licenceNumber.toString(),
                         style: context.theme.textTheme.bodySmall,
                       ),
                     ],
@@ -99,7 +88,7 @@ class VehiclesCardItem extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        vehicleModel.vehicleStatus.name,
+                        driverModel.driverState.title,
                         style: context.theme.textTheme.bodySmall,
                       ),
                     ],
