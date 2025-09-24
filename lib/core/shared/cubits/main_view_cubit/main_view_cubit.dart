@@ -26,7 +26,6 @@ class MainViewCubit extends Cubit<MainViewState> {
     TabConfig(icon: AppIcons.van, label: 'Vehicles'),
     TabConfig(icon: AppIcons.driver, label: 'Drivers'),
     TabConfig(icon: AppIcons.trip, label: 'Trips'),
-    
   ];
 
   // Handle tab selection

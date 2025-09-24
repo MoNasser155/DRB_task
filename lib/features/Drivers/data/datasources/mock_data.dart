@@ -4,6 +4,7 @@ import 'package:drb_task/features/Drivers/data/models/driver_model.dart';
 class MockDriversData {
   static List<DriverModel> drivers = [
       DriverModel(
+        driverId: 5,
         driverName: 'Driver 1',
         driverImage:
             'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -13,6 +14,7 @@ class MockDriversData {
         curruntTrip: 'Trip 1',
       ),
       DriverModel(
+        driverId: 60,
         driverName: 'Driver 2',
         driverImage:
             'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -20,6 +22,7 @@ class MockDriversData {
         driverState: DriverState.available,
       ),
       DriverModel(
+        driverId: 70,
         driverName: 'Driver 3',
         driverImage:
             'https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -29,6 +32,7 @@ class MockDriversData {
         curruntTrip: 'Trip 2',
       ),
       DriverModel(
+        driverId: 85,
         driverName: 'Driver 4',
         driverImage:
             'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -38,6 +42,7 @@ class MockDriversData {
         curruntTrip: 'Trip 3',
       ),
       DriverModel(
+        driverId: 90,
         driverName: 'Driver 5',
         driverImage:
             'https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -45,6 +50,7 @@ class MockDriversData {
         driverState: DriverState.available,
       ),
       DriverModel(
+        driverId: 100,
         driverName: 'Driver 6',
         driverImage:
             'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',

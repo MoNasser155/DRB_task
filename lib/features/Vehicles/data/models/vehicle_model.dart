@@ -32,4 +32,16 @@ class VehicleModel {
       currentTrip: ''
     );
   }
+
+  factory VehicleModel.initial () {
+    return VehicleModel(
+      vehicleId: 0,
+      vehicleName: '',
+      vehicleImage: AppIcons.empty,
+      vehicleType: VehiclesType.truck,
+      vehicleStatus: VehiclesStatus.available,
+      assignedDriver: '', 
+      currentTrip: ''
+    );
+  }
 }

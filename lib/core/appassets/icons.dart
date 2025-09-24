@@ -5,4 +5,6 @@ class AppIcons {
   static const String bike = 'assets/icons/bike.svg';
   static const String driver = 'assets/icons/driver.svg';
   static const String trip = 'assets/icons/trip.svg';
+  static const String assigneTrip = 'assets/icons/assigne_trip.svg';
+  static const String arrowBack = 'assets/icons/arrowBack.svg';
 }
