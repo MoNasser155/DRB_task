@@ -17,7 +17,7 @@ class CustomDetailsRow extends StatelessWidget {
       children: [
         Text(
           title,
-          style: context.theme.textTheme.bodyLarge!.copyWith(
+          style: context.theme.textTheme.titleMedium!.copyWith(
             color: ColorHelper.black,
             fontWeight: FontWeight.bold,
           ),

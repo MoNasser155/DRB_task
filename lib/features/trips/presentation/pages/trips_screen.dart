@@ -1,9 +1,8 @@
-import 'package:drb_task/core/colorhelper.dart';
 import 'package:drb_task/core/constants.dart';
+import 'package:drb_task/core/widgets/custom_appbar.dart';
 import 'package:drb_task/features/trips/presentation/cubits/trips_cubit/trips_cubit.dart';
 import 'package:drb_task/features/trips/presentation/widgets/trips_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TripsScreen extends StatelessWidget {
@@ -14,15 +13,11 @@ class TripsScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<TripsCubit>()..fetchData(),
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 0,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarIconBrightness: Brightness.dark,
-            statusBarColor: ColorHelper.white,
-          ),
-        ),
+        appBar: CustomAppbar.customMainViewAppBar(),
         body: TripsBody(),
       ),
     );
   }
+
+
 }

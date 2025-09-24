@@ -1,9 +1,8 @@
-import 'package:drb_task/core/colorhelper.dart';
 import 'package:drb_task/core/constants.dart';
+import 'package:drb_task/core/widgets/custom_appbar.dart';
 import 'package:drb_task/features/Drivers/presentation/cubits/drivers_cubit/drivers_cubit.dart';
 import 'package:drb_task/features/Drivers/presentation/widgets/drivers_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DriversScreen extends StatelessWidget {
@@ -14,13 +13,7 @@ class DriversScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<DriversCubit>()..fetchData(),
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 0,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarIconBrightness: Brightness.dark,
-            statusBarColor: ColorHelper.white,
-          ),
-        ),
+       appBar: CustomAppbar.customMainViewAppBar(),
         body: DriversBody(),
       ),
     );
