@@ -6,7 +6,7 @@ class MockVehiclesData {
   static List<VehicleModel> vehicles = [
     VehicleModel(
       vehicleId: 155,
-      vehicleName: VehiclesType.van.name,
+      vehicleName: 'Mercedes',
       vehicleImage: VehiclesType.van.image,
       vehicleStatus: VehiclesStatus.available,
       vehicleType: VehiclesType.van,
@@ -15,7 +15,7 @@ class MockVehiclesData {
     ),
     VehicleModel(
       vehicleId: 187,
-      vehicleName: VehiclesType.bike.name,
+      vehicleName: 'Bike 1',
       vehicleImage: VehiclesType.bike.image,
       vehicleStatus: VehiclesStatus.available,
       vehicleType: VehiclesType.bike,
@@ -24,7 +24,7 @@ class MockVehiclesData {
     ),
     VehicleModel(
       vehicleId: 201,
-      vehicleName: VehiclesType.truck.name,
+      vehicleName: 'Truck 1',
       vehicleImage: VehiclesType.truck.image,
       vehicleStatus: VehiclesStatus.assigned,
       vehicleType: VehiclesType.truck,
@@ -33,7 +33,7 @@ class MockVehiclesData {
     ),
     VehicleModel(
       vehicleId: 95,
-      vehicleName: VehiclesType.bike.name,
+      vehicleName: 'Bike 2',
       vehicleImage: VehiclesType.bike.image,
       vehicleStatus: VehiclesStatus.assigned,
       vehicleType: VehiclesType.bike,
@@ -42,7 +42,7 @@ class MockVehiclesData {
     ),
     VehicleModel(
       vehicleId: 163,
-      vehicleName: VehiclesType.van.name,
+      vehicleName: 'Van 1',
       vehicleImage: VehiclesType.van.image,
       vehicleStatus: VehiclesStatus.assigned,
       vehicleType: VehiclesType.van,
@@ -51,7 +51,7 @@ class MockVehiclesData {
     ),
     VehicleModel(
       vehicleId: 140,
-      vehicleName: VehiclesType.bike.name,
+      vehicleName: 'Bike 3',
       vehicleImage: VehiclesType.bike.image,
       vehicleStatus: VehiclesStatus.available,
       vehicleType: VehiclesType.bike,
@@ -60,7 +60,7 @@ class MockVehiclesData {
     ),
     VehicleModel(
       vehicleId: 36,
-      vehicleName: VehiclesType.truck.name,
+      vehicleName: 'Truck 2',
       vehicleImage: VehiclesType.truck.image,
       vehicleStatus: VehiclesStatus.available,
       vehicleType: VehiclesType.truck,
@@ -69,7 +69,7 @@ class MockVehiclesData {
     ),
     VehicleModel(
       vehicleId: 12,
-      vehicleName: VehiclesType.truck.name,
+      vehicleName: 'Truck 3',
       vehicleImage: VehiclesType.truck.image,
       vehicleStatus: VehiclesStatus.assigned,
       vehicleType: VehiclesType.truck,

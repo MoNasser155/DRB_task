@@ -1,3 +1,5 @@
+import 'package:drb_task/core/enums/drivers/driver_state_enum.dart';
+import 'package:drb_task/core/enums/vehicles/vehicles_status_enum.dart';
 import 'package:drb_task/core/shared/state_status.dart';
 import 'package:drb_task/features/Drivers/data/datasources/mock_data.dart';
 import 'package:drb_task/features/Drivers/data/models/driver_model.dart';
@@ -21,15 +23,26 @@ class AssigneTripCubit extends Cubit<AssigneTripState> with AssigneTripMixin {
 
   Future<void> _fetchDrivers() async {
     emit(state.copyWith(status: StateStatus.loading));
+    //get mock data
     final List<DriverModel> driversList = MockDriversData.drivers;
-    emit(state.copyWith(driversList: driversList, status: StateStatus.success));
+    //fiter data (only available drivers)
+    final availableDrivers =
+        driversList
+            .where((driver) => driver.driverState == DriverState.available)
+            .toList();
+    emit(state.copyWith(driversList: availableDrivers, status: StateStatus.success));
   }
 
   Future<void> _fetchVehicles() async {
     emit(state.copyWith(status: StateStatus.loading));
+    //get mock data
     final List<VehicleModel> vehiclesList = MockVehiclesData.vehicles;
+    //fiter data (only available vehicles)
+    final availableVehicles = vehiclesList
+        .where((vehicle) => vehicle.vehicleStatus == VehiclesStatus.available)
+        .toList();
     emit(
-      state.copyWith(vehiclesList: vehiclesList, status: StateStatus.success),
+      state.copyWith(vehiclesList: availableVehicles, status: StateStatus.success),
     );
   }
 
